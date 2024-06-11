@@ -1,11 +1,14 @@
 
 body {
+    margin: 0;
+}
+
+.container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100vw;
     height: 100vh;
-    margin: 0;
     background: linear-gradient(180deg, #445495 0%, #0A102A 80%);
     color: #F9E1BB;
 }
@@ -41,7 +44,7 @@ h1 {
 }
 
 form > input {
-    padding: 0 .5em;
+    padding: 0 0.5em;
 
     height: 2.5em;
     width: 250px;
@@ -96,4 +99,83 @@ form > button:hover {
     text-align: center;
     display: inline-block;
     text-decoration: none;
+}
+
+
+.base-container {
+    display: flex;
+    /* align-items: center; */
+    justify-content: flex-start;
+    background: linear-gradient(180deg, #445495 0%, #0A102A 80%);
+    color: #F9E1BB;
+    width: 100vw;
+}
+
+main {
+    width: 74vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0 13vw;
+    min-height: 100vh;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 6vw;
+    height: 100vh;
+    background: radial-gradient(50% 50% at 50% 25%, #9e524a, #3f2722);
+}
+
+nav > img {
+    width: 60%;
+    margin: 0.5em auto;
+}
+
+nav a {
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    line-height: 4em;
+}
+
+nav ul {
+    width: 100%;
+}
+
+li i {
+    font-size: 1.5em;
+    text-align: center;
+    color: #F9E1BB;
+    width: 100%;
+}
+
+nav > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a:hover {
+    background-color: #9E524ABF;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box > button {
+    margin: 0 0.5em;
+    width: 15%;
+}
+
+.search-box > input {
+    width: 85%;
+    
 }

@@ -1,0 +1,123 @@
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    overflow: auto;
+}
+
+.books-container > div {
+    height: 285px;
+    width: 265px;
+    padding: 15px;
+    border-radius: 25px;
+    background-image: linear-gradient(180deg, #6f85f9 0%, #4150a2 80%);
+    box-shadow: 0px -5px 4px rgba(0, 0, 0, 0.75) inset;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top-box {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    height: auto;
+    gap: 18px;
+    flex: 0 1;
+}
+
+.top-box > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.description {
+    font-size: 12px;
+    font-family: 'Roboto Flex';
+    color: #fff;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 13;
+    line-clamp: 13;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.bottom-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.koho-title {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: KoHo;
+    color: #fff;
+    text-align: left;
+    display: inline-block;
+}
+
+.book-title {
+    width: 250px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.75);
+    margin: 5px 0 0 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 13;
+    line-clamp: 13;
+    -webkit-box-orient: vertical;
+    line-height: 0.95em;
+    overflow: hidden;
+}
+
+.book-author {
+    display: inline-block;
+    width: 150px;
+    font-size: 12px;
+    font-family: 'Roboto Flex';
+    color: white;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    height: 25px;
+    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
+    margin: 5px 0 0 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    /* overflow: hidden; */
+    
+
+}
+
+.add-bookmark {
+    display: inline-block;
+    color: white;
+    margin-right: 5px;
+
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 20%;
+}
+
+.rating p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.bottom-box i {
+    display: inline-block;
+    color: white;
+}
+
+.bottom-box a:last-child {
+    margin-left: 5px;
+}
+
