@@ -1,0 +1,2 @@
+# Images uploaded to the server are stored in the /img/uploads directory.
+public/img/uploads/*
