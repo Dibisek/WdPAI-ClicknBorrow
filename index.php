@@ -1,16 +1,19 @@
 <?php
 
-require_once 'src/controllers/AppController.php';
+require_once 'Routing.php';
 
-// echo "<h1>Hello world 🙋</h1>";
+require_once 'src/controllers/DefaultController.php';
 
-$controller = new AppController();
-
-$path = trim($_SERVER['REQUEST_URI']);
+$path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url($path, PHP_URL_PATH);
-$action = explode('/', $path)[1];
-$action = $action == NULL ? 'login' : $action;
-// var_dump($_SERVER['REQUEST_URI']);
 
-$controller->render($action);
+Routing::get('', 'DefaultController');
+Routing::get('index', 'DefaultController');
+Routing::get('login', 'DefaultController');
+Routing::get('bookmarks', 'DefaultController');
+Routing::get('account', 'DefaultController');
+Routing::get('search', 'DefaultController');
+
+
+Routing::run($path);
 ?>
