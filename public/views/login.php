@@ -17,9 +17,14 @@
         <div class="flex-row-center-center">
             <h1>Sign in</h1>
 
-            <form class="flex-row-center-center">
-                <input type="email" placeholder="Login" class="btn-gradient">
-                <input type="password" placeholder="Password" class="btn-gradient">
+            <form class="flex-row-center-center" action="login" method="POST">
+                <input name="email" type="email" placeholder="Email" class="btn-gradient">
+                <input name="password" type="password" placeholder="Password" class="btn-gradient">
+                <?php if (isset($messages)) {
+                    foreach ($messages as $message) {
+                        echo "<p class='error-message'>$message</p>";
+                    }
+                } ?>
                 <button type="submit">Confirm</button>
             </form>
 
