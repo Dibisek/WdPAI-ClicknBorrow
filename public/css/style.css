@@ -101,6 +101,15 @@ form > button:hover {
     text-decoration: none;
 }
 
+.error-message {
+    color: #f54d38;
+    font-size: 1em;
+    font-family: KoHo;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
 
 .base-container {
     display: flex;

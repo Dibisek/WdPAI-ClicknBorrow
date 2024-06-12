@@ -6,11 +6,12 @@ class DefaultController extends AppController
 {
     public function index()
     {
-        $this->render('home');
+        $this->render('login');
     }
 
-    public function login() {
-        $this->render('login');
+    public function homepage()
+    {
+        $this->render('homepage');
     }
 
     public function bookmarks() {
