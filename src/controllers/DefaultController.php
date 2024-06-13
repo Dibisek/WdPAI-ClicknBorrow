@@ -10,7 +10,12 @@ class DefaultController extends AppController
             return $this->render('login');
         }
 
-        return $this->render('homepage');
+        (new BooksController)->homepage();
+    }
+
+    public function error()
+    {
+        return $this->render('error');
     }
 
     public function homepage()
