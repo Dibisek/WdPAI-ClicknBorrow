@@ -121,10 +121,10 @@ form > button:hover {
 }
 
 main {
-    width: 74vw;
+    width: 80vw;
     display: flex;
     flex-direction: column;
-    padding: 0 13vw;
+    padding: 0 7vw 0 13vw;
     min-height: 100vh;
 }
 
@@ -141,12 +141,14 @@ nav {
     background: radial-gradient(50% 50% at 50% 25%, #9e524a, #3f2722);
 }
 
-nav > a > img {
-    width: 100%;
+nav > a:first-child img {
+    display: block;
     margin: 0.5em auto;
+    width: 95%;
 }
 
 nav > ul a {
+    transition: background-color 0.25s;
     text-decoration: none;
     display: inline-block;
     width: 100%;
@@ -171,6 +173,7 @@ nav > ul {
 }
 
 nav > ul a:hover {
+    transition: background-color 0.25s;
     background-color: #9E524ABF;
 }
 
