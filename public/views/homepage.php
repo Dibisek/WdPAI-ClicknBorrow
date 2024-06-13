@@ -74,7 +74,7 @@
                             <i class="fa-regular fa-bookmark"></i>
                         </a>
 
-                        <a href="#">
+                        <a href="/bookDetails?id=<?= $book->getId()?>">
                             <i class="fa-regular fa-share-from-square"></i>
                         </a>
                     </div>

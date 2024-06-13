@@ -1,0 +1,83 @@
+section {
+    font-family: "Roboto Flex";
+    max-width: 80vw;
+    border-radius: 25px;
+    background-image: linear-gradient(180deg, #6f85f9 0%, #4150a2 80%);
+    box-shadow: 0px -5px 4px rgba(0, 0, 0, 0.75) inset;
+    margin: 10vh 0;
+}
+
+.book-details-container {
+    display: grid;
+    grid-template: 1fr / 1fr 2fr 1fr;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10%;
+}
+
+.left-section img {
+    width: 100%;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+.mid-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 40vw;
+    padding: 10% 0;
+}
+
+.name-box h1 {
+    font-family: KoHo;
+    font-style: normal;
+    font-size: 3em;
+    margin: 10px 0;
+}
+
+.name-box h2 {
+    font-family: KoHo;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.5em;
+    margin: 15px 0;
+}
+
+.add-bookmark p {
+    font-family: 'Roboto Flex';
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.func-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mid-section .description {
+    font-family: 'Roboto Flex';
+    font-size: 1.2em;
+}
+
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10%;
+}
+
+.right-section p {
+    text-align: right;
+}
+
+.genre-box > p:first-child {
+    color: #c9c9c9;
+}

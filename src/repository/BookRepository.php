@@ -28,4 +28,31 @@ class BookRepository extends Repository
 
         return $result;
     }
+
+    public function getBookById(int $id) : ?Book
+    {
+        $this->database->connect();
+        $query = $this->database->getConnection()->prepare('SELECT * FROM books_view WHERE book_id = :id');
+        $query->bindParam(':id', $id, PDO::PARAM_INT);
+        $query->execute();
+
+        $this->database->disconnect();
+
+        $book = $query->fetch(PDO::FETCH_ASSOC);
+
+        if(!$book) {
+            return null;
+        }
+
+        return new Book(
+            $book['title'],
+            $book['author_name'],
+            $book['description'],
+            $book['publishing_date'],
+            $book['page_count'],
+            $book['photo'],
+            $book['categories'],
+            $book['book_id']
+        );
+    }
 }

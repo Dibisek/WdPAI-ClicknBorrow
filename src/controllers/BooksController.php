@@ -22,4 +22,16 @@ class BooksController extends AppController
         $books = $this->bookRepository->getBooks();
         return $this->render('homepage', ['books' => $books]);
     }
+
+    public function bookDetails()
+    {
+        if (!$this->isGet()) {
+            return $this->render('bookDetails');
+        }
+
+        $id = $_GET['id'];
+
+        $book = $this->bookRepository->getBookById($id);
+        return $this->render('bookDetails', ['book' => $book]);
+    }
 }

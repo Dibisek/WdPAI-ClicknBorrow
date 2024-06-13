@@ -16,6 +16,7 @@ Routing::post('register', 'SecurityController');
 if (isset($_SESSION['user'])) {
     Routing::get('homepage', 'BooksController');
     Routing::get('bookmarks', 'DefaultController');
+    Routing::get('bookDetails', 'BooksController');
     Routing::get('account', 'DefaultController');
     Routing::get('search', 'DefaultController');
     Routing::get('logout', 'SecurityController');
