@@ -2,17 +2,29 @@
 
 class User
 {
+    private $id;
     private $email;
     private $password;
     private $name;
     private $surname;
+    private $phoneNumber;
+    private $isAdmin;
 
-    public function __construct(string $email, string $password, string $name, string $surname)
+    public function __construct(string $email, string $password, string $firstname, string $surname,
+                                string $phoneNumber, bool $isAdmin=false, int $id=0)
     {
+        $this->id = $id;
         $this->email = $email;
         $this->password = $password;
-        $this->name = $name;
+        $this->name = $firstname;
         $this->surname = $surname;
+        $this->phoneNumber = $phoneNumber;
+        $this->isAdmin = $isAdmin;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
     }
 
     public function getEmail(): string
@@ -20,7 +32,7 @@ class User
         return $this->email;
     }
 
-    public function setEmail(string $email)
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
@@ -30,7 +42,7 @@ class User
         return $this->password;
     }
 
-    public function setPassword(string $password)
+    public function setPassword(string $password): void
     {
         $this->password = $password;
     }
@@ -40,7 +52,7 @@ class User
         return $this->name;
     }
 
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
@@ -50,10 +62,32 @@ class User
         return $this->surname;
     }
 
-    public function setSurname(string $surname)
+    public function setSurname(string $surname): void
     {
         $this->surname = $surname;
     }
+
+    public function getPhoneNumber(): string
+    {
+        return $this->phoneNumber;
+    }
+
+    public function setPhoneNumber(string $phoneNumber): void
+    {
+        $this->phoneNumber = $phoneNumber;
+    }
+
+    public function getIsAdmin(): bool
+    {
+        return $this->isAdmin;
+    }
+
+    public function setIsAdmin(bool $isAdmin): void
+    {
+        $this->isAdmin = $isAdmin;
+    }
+
+
 
 
 }

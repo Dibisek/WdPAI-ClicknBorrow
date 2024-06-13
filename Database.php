@@ -1,6 +1,9 @@
 <?php
 
+require_once 'config.php';
 class Database {
+    private static $instance = null;
+    private $connection;
     private $username;
     private $password;
     private $host;
@@ -8,11 +11,11 @@ class Database {
 
     public function __construct()
     {
-        // TODO it should be singleton
-        $this->username = "docker";
-        $this->password = "docker";
-        $this->host = "db";
-        $this->database = "db";
+        $this->username = USERNAME;
+        $this->password = PASSWORD;
+        $this->host = HOST;
+        $this->database = DATABASE;
+        $this->connection = null;
     }
 
     public function connect()
@@ -32,5 +35,22 @@ class Database {
         catch(PDOException $e) {
             die("Connection failed: " . $e->getMessage());
         }
+    }
+
+    public static function getInstance()
+    {
+        if (!self::$instance) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    public function getConnection()
+    {
+        return $this->connect();
+    }
+    public function disconnect()
+    {
+        $this->database = null;
     }
 }

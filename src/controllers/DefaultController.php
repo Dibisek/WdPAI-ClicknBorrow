@@ -6,7 +6,11 @@ class DefaultController extends AppController
 {
     public function index()
     {
-        $this->render('login');
+        if (!isset($_SESSION['user'])) {
+            return $this->render('login');
+        }
+
+        return $this->render('homepage');
     }
 
     public function homepage()

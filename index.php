@@ -10,11 +10,15 @@ $path = parse_url($path, PHP_URL_PATH);
 Routing::get('', 'DefaultController');
 Routing::get('index', 'DefaultController');
 Routing::post('login', 'SecurityController');
-Routing::get('homepage', 'DefaultController');
-Routing::get('bookmarks', 'DefaultController');
-Routing::get('account', 'DefaultController');
-Routing::get('search', 'DefaultController');
+Routing::post('register', 'SecurityController');
 
+if (isset($_SESSION['user'])) {
+    Routing::get('homepage', 'DefaultController');
+    Routing::get('bookmarks', 'DefaultController');
+    Routing::get('account', 'DefaultController');
+    Routing::get('search', 'DefaultController');
+    Routing::get('logout', 'SecurityController');
+}
 
 Routing::run($path);
 ?>

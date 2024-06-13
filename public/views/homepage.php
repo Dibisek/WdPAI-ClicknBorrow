@@ -36,6 +36,11 @@
                         <i class="fa-solid fa-clipboard-user"></i>
                     </a>
                 </li>
+                <li>
+                    <a href="/logout" class="bar-btn">
+                        <i class="fa-solid fa-door-open"></i>
+                    </a>
+                </li>
             </ul>
         </nav>
         <main>
