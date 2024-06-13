@@ -13,7 +13,7 @@ Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 
 if (isset($_SESSION['user'])) {
-    Routing::get('homepage', 'DefaultController');
+    Routing::get('homepage', 'BooksController');
     Routing::get('bookmarks', 'DefaultController');
     Routing::get('account', 'DefaultController');
     Routing::get('search', 'DefaultController');

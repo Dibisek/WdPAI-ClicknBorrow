@@ -60,6 +60,26 @@
                     </div>
                 </div>
                 <div>book3</div>
+                <?php foreach ($books as $book): ?>
+
+                <div id="project-<?= $book->getId()?>">
+                    <div class="top-box">
+                        <img src="public/img/uploads/<?= $book->getPhoto()?>">
+                        <p class="description"><?= $book->getDescription()?></p>
+                    </div>
+                    <h2 class="book-title koho-title"><?= $book->getTitle()?></h2>
+                    <div class="bottom-box">
+                        <p class="book-author"><?= $book->getAuthor()?></p>
+                        <a href="#" class="add-bookmark">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-regular fa-share-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <?php endforeach; ?>
             </section>
         </main>
     </div>    
