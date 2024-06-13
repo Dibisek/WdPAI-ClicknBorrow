@@ -2,20 +2,20 @@
 
 class Author
 {
-    private $id;
+    private $author_id;
     private $first_name;
     private $last_name;
 
     public function __construct(string $first_name, string $last_name, int $id=0)
     {
-        $this->id = $id;
+        $this->author_id = $id;
         $this->first_name = $first_name;
         $this->last_name = $last_name;
     }
 
-    public function getId(): int
+    public function getAuthorId(): int
     {
-        return $this->id;
+        return $this->author_id;
     }
 
     public function getName(): string
