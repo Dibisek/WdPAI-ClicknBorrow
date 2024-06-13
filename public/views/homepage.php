@@ -13,36 +13,7 @@
 </head>
 <body>
     <div class="base-container">
-        <nav>
-            <img src="public/img/logo_vert.svg" alt="Vertical Logo">
-            <ul>
-                <li>
-                    <a href="#" class="bar-btn">
-                        <i class="fa-solid fa-house"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="bar-btn">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="bar-btn">
-                        <i class="fa-solid fa-book-bookmark"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="bar-btn">
-                        <i class="fa-solid fa-clipboard-user"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="/logout" class="bar-btn">
-                        <i class="fa-solid fa-door-open"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <?php include_once __DIR__.'/shared/nav.php'; ?>
         <main>
             <h1>Newly added</h1>
             <section class="books-container">

@@ -15,7 +15,7 @@
         <img src="public/img/Logotype.svg" alt="logo" class="login-logo">
     </div>
     <div class="flex-row-center-center">
-        <h1>Sign in</h1>
+        <h1>Sign up</h1>
 
         <form class="flex-row-center-center" action="register" method="POST">
             <input name="firstname" type="text" placeholder="First Name*" class="btn-gradient" required>
@@ -32,7 +32,7 @@
             <button type="submit">Confirm</button>
         </form>
 
-        <a href="#" class="sign-up-btn">Sign up</a>
+        <a href="/login" class="sign-up-btn">Sign in</a>
     </div>
 </div>
 </body>

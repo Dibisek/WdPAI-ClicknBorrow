@@ -141,12 +141,12 @@ nav {
     background: radial-gradient(50% 50% at 50% 25%, #9e524a, #3f2722);
 }
 
-nav > img {
-    width: 60%;
+nav > a > img {
+    width: 100%;
     margin: 0.5em auto;
 }
 
-nav a {
+nav > ul a {
     text-decoration: none;
     display: inline-block;
     width: 100%;
@@ -170,7 +170,7 @@ nav > ul {
     margin: 0;
 }
 
-nav a:hover {
+nav > ul a:hover {
     background-color: #9E524ABF;
 }
 

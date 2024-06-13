@@ -28,7 +28,7 @@
                 <button type="submit">Confirm</button>
             </form>
 
-            <a href="#" class="sign-up-btn">Sign up</a>
+            <a href="/register" class="sign-up-btn">Sign up</a>
         </div>
     </div>
 </body>
