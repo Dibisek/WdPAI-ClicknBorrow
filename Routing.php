@@ -5,6 +5,7 @@ require_once 'src/controllers/SecurityController.php';
 require_once 'src/controllers/ErrorController.php';
 require_once 'src/controllers/BooksController.php';
 require_once 'src/controllers/AdminController.php';
+require_once 'src/controllers/ReservationController.php';
 
 class Routing {
     public static $routes;

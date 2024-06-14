@@ -31,7 +31,7 @@
                 </a>
             </li>
             <li>
-                <a href="/reservationsHistory" class="bar-btn" title="Reservations history">
+                <a href="/history" class="bar-btn" title="Reservations history">
                     <i class="fa-regular fa-clock"></i>
                 </a>
             </li>

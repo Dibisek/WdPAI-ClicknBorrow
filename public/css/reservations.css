@@ -21,3 +21,8 @@
     transition: background-color 0.25s;
     background-color: #6f85f9;
 }
+
+section.books-container > h2 {
+    font-family: "Roboto Flex";
+    font-size: 1.5em;
+}

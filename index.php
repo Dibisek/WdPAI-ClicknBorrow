@@ -28,6 +28,7 @@ if (isset($_SESSION['user'])) {
     Routing::get('bookDetails', 'BooksController');
     Routing::get('account', 'DefaultController');
     Routing::get('search', 'BooksController');
+    Routing::get('history', 'ReservationController');
     Routing::get('logout', 'SecurityController');
     Routing::post('filterBooks', 'BooksController');
     Routing::post('reservationHandler', 'AdminController');

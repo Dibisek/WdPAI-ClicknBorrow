@@ -8,14 +8,13 @@ class ReservationRepository extends Repository
     public function getReservationByEmail(string $userEmail, string $status) :array
     {
         $this->database->connect();
-        $query = $this->database->getConnection()->prepare("
+        $query = $this->database->getConnection()->prepare('
         SELECT * FROM reservation_view WHERE email = :user_email AND reservation_status = :status
-        ");
+        ');
 
         $query->bindParam(':user_email', $userEmail, PDO::PARAM_STR);
         $query->bindParam(':status', $status, PDO::PARAM_STR);
         $query->execute();
-        $this->database->disconnect();
 
         $reservations = $query->fetchAll(PDO::FETCH_ASSOC);
         $reservationList = [];
