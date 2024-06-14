@@ -6,7 +6,7 @@ class CategoryRepository extends Repository
 {
     public function getCategories() :array
     {
-        $query = $this->database->connect()->prepare('SELECT * FROM categories');
+        $query = $this->database->getConnection()->prepare('SELECT * FROM categories');
         $query->execute();
 
         $this->database->disconnect();

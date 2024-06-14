@@ -8,7 +8,7 @@ class UserRepository extends Repository
     public function getUser(string $email): ?User
     {
         $this->database->connect();
-        $query = $this->database->connect()->prepare('
+        $query = $this->database->getConnection()->prepare('
             SELECT * FROM public.users WHERE email = :email
             ');
         $query->bindParam(':email', $email, PDO::PARAM_STR);
@@ -34,7 +34,7 @@ class UserRepository extends Repository
     public function addUser(User $user): void
     {
         $this->database->connect();
-        $query = $this->database->connect()->prepare('
+        $query = $this->database->getConnection()->prepare('
             INSERT INTO public.users (email, password, firstname, surname, phone_nb, is_admin)
             VALUES (?, ?, ?, ?, ?, ?)
         ');
