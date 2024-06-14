@@ -210,3 +210,19 @@ nav > ul a:hover {
     color: #F9E1BB;
     margin: 0.5em 1em;
 }
+
+.paginationWrapper{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+.pageButton{
+    background-color: #3F2722;
+    transition: none;
+}
+
+.pageButton.active{
+    background-color: #9e524a;
+}
