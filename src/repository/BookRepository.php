@@ -28,7 +28,7 @@ class BookRepository extends Repository
         $stmt = $this->database->getConnection()->prepare($query);
 
         foreach ($params as $key => $value) {
-            $stmt->bindValue($key, $value);
+            $stmt->bindValue($key, $value, PDO::PARAM_STR);
         }
 
         $stmt->execute();
@@ -37,22 +37,24 @@ class BookRepository extends Repository
 
         $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if (!$books) {
-            return [];
-        }
+        return $books;
 
-        foreach ($books as $book) {
-            $result[] = new Book(
-                $book['title'],
-                $book['author_name'],
-                $book['description'],
-                $book['publishing_date'],
-                $book['page_count'],
-                $book['photo'],
-                $book['categories'],
-                $book['book_id']
-            );
-        }
+//        if (!$books) {
+//            return [];
+//        }
+//
+//        foreach ($books as $book) {
+//            $result[] = new Book(
+//                $book['title'],
+//                $book['author_name'],
+//                $book['description'],
+//                $book['publishing_date'],
+//                $book['page_count'],
+//                $book['photo'],
+//                $book['categories'],
+//                $book['book_id']
+//            );
+//        }
 
         return $result;
     }
