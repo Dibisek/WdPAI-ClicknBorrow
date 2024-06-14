@@ -1,0 +1,23 @@
+.description p {
+    margin: 0.5em 0;
+    font-size: 1.3em;
+}
+
+.description .bold {
+    font-weight: bold;
+}
+
+.button_wrapper button {
+    transition: background-color 0.25s;
+    display: inline-block;
+    background-color: #4150a2;
+    border: none;
+    border-radius: 5px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.button_wrapper button:hover {
+    transition: background-color 0.25s;
+    background-color: #6f85f9;
+}

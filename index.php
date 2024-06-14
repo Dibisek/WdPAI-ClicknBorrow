@@ -7,12 +7,20 @@ require_once 'src/controllers/DefaultController.php';
 $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url($path, PHP_URL_PATH);
 
+function isAdmin() {
+    if (!isset($_SESSION['user'])) {
+        return false;
+    }
+
+    $user = unserialize($_SESSION['user']);
+    return $user->getIsAdmin();
+}
+
 Routing::get('', 'DefaultController');
-Routing::get('index', 'BooksController');
 Routing::get('error', 'DefaultController');
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
-Routing::post('filterBooks', 'BooksController');
+
 
 if (isset($_SESSION['user'])) {
     Routing::get('homepage', 'BooksController');
@@ -21,6 +29,12 @@ if (isset($_SESSION['user'])) {
     Routing::get('account', 'DefaultController');
     Routing::get('search', 'BooksController');
     Routing::get('logout', 'SecurityController');
+    Routing::post('filterBooks', 'BooksController');
+    Routing::post('reservationHandler', 'AdminController');
+
+}
+if (isAdmin()) {
+    Routing::get('reservationsAdmin', 'AdminController');
 }
 
 Routing::run($path);
