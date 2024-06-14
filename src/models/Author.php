@@ -18,7 +18,7 @@ class Author
         return $this->author_id;
     }
 
-    public function getName(): string
+    public function getAuthorName(): string
     {
         return $this->first_name . ' ' . $this->last_name;
     }

@@ -190,6 +190,7 @@ nav > ul a:hover {
 
 .search-box {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -199,6 +200,13 @@ nav > ul a:hover {
 }
 
 .search-box > input {
-    width: 85%;
+    width: 95%;
     
+}
+
+.search-box label {
+    font-family: KoHo;
+    font-size: 1.3em;
+    color: #F9E1BB;
+    margin: 0.5em 1em;
 }

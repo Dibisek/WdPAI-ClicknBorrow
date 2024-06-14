@@ -17,7 +17,7 @@ class AuthorRepository extends Repository
         foreach ($authors as $author) {
             $result[] = new Author(
                 $author['firstname'],
-                $author['lastname'],
+                $author['surname'],
                 $author['author_id']
             );
         }

@@ -12,13 +12,14 @@ Routing::get('index', 'BooksController');
 Routing::get('error', 'DefaultController');
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
+Routing::post('filterBooks', 'BooksController');
 
 if (isset($_SESSION['user'])) {
     Routing::get('homepage', 'BooksController');
     Routing::get('bookmarks', 'DefaultController');
     Routing::get('bookDetails', 'BooksController');
     Routing::get('account', 'DefaultController');
-    Routing::get('search', 'DefaultController');
+    Routing::get('search', 'BooksController');
     Routing::get('logout', 'SecurityController');
 }
 

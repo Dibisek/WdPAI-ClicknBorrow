@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1ff2c7e106.js" crossorigin="anonymous"></script>
+    <script src="public/js/searchBooks.js" defer></script>
     <title>Search</title>
 </head>
 <body>
@@ -16,10 +17,28 @@
         <?php include_once __DIR__.'/shared/nav.php'; ?>
         <main>
             <h1>Search books</h1>
-            <form class="search-box">
-                <input type="text" placeholder="Search" class="btn-gradient">
-                <button type="submit">Search</button>
-                <button type="menu">Filter</button>
+            <form class="search-box" method="POST">
+                <input name="title" type="text" placeholder="Search by title" class="btn-gradient">
+                <label for="category">Category
+                    <select name="category" id="category">
+                        <option value="">-</option>
+                        <?php foreach ($categories as $category): ?>
+                            <option value="<?= $category->getCategoryId() ?>">
+                                <?= $category->getCategoryName() ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </label>
+                <label for="author">Author
+                    <select name="author" id="author">
+                        <option value="">-</option>
+                        <?php foreach ($authors as $author): ?>
+                            <option value="<?= $author->getAuthorId() ?>">
+                                <?= $author->getAuthorName() ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </label>
             </form>
             <h1>Results</h1>
             <section class="books-container">
