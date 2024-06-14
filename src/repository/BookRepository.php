@@ -38,23 +38,34 @@ class BookRepository extends Repository
         $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $books;
+    }
 
-//        if (!$books) {
-//            return [];
-//        }
-//
-//        foreach ($books as $book) {
-//            $result[] = new Book(
-//                $book['title'],
-//                $book['author_name'],
-//                $book['description'],
-//                $book['publishing_date'],
-//                $book['page_count'],
-//                $book['photo'],
-//                $book['categories'],
-//                $book['book_id']
-//            );
-//        }
+    public function getBooksAlphabetically() : array
+    {
+        $this->database->connect();
+        $query = $this->database->getConnection()->prepare('SELECT * FROM books_view ORDER BY title');
+        $query->execute();
+
+        $this->database->disconnect();
+
+        $books = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        if(!$books) {
+            return [];
+        }
+
+        foreach ($books as $book) {
+            $result[] = new Book(
+                $book['title'],
+                $book['author_name'],
+                $book['description'],
+                $book['publishing_date'],
+                $book['page_count'],
+                $book['photo'],
+                $book['categories'],
+                $book['book_id']
+            );
+        }
 
         return $result;
     }
