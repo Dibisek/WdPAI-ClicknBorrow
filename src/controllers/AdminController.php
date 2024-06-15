@@ -82,7 +82,7 @@ class AdminController extends AppController
 
         }
         $this->render('addBook', ['authors' => $this->authorRepository->getAuthors(),
-            'categories' => $this->categoryRepository->getCategories()]
+            'categories' => $this->categoryRepository->getCategories(), 'messages' => $this->message]
         );
     }
 

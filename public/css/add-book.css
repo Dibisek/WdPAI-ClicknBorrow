@@ -47,3 +47,11 @@ form > input {
     border-radius: 15px;
 }
 
+.message {
+    font-family: KoHo;
+    font-size: 1em;
+    color: #f36655;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+

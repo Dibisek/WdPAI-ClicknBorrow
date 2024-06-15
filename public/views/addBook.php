@@ -49,6 +49,17 @@
                     <label for="cover">Cover
                     <input name=cover type="file" name="cover" id="cover" required>
                     </label>
+                    <div class="message <?php if(!empty($messages)) echo 'visible'; ?>" >
+                        <p>
+                            <?php
+                            if(isset($messages)) {
+                                foreach ($messages as $message) {
+                                    echo $message;
+                                }
+                            }
+                            ?>
+                        </p>
+                    </div>
                     <button type="submit" class="sign-up-btn">Add book</button>
             </form>
         </section>
