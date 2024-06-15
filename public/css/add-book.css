@@ -55,3 +55,7 @@ form > input {
     word-wrap: break-word;
 }
 
+#description {
+    max-width: 90%;
+}
+

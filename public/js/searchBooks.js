@@ -23,7 +23,6 @@ window.addEventListener("resize", () => {
 async function filterBooks(){
     const data = {}
     inputsValue.forEach(input => {
-        console.log(input.value);
         data[input.name] = input.value;
     });
 
