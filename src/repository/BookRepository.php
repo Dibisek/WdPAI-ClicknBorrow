@@ -96,4 +96,37 @@ class BookRepository extends Repository
             $book['book_id']
         );
     }
+
+    public function addBook(Book $book) : void
+    {
+        $this->database->connect();
+        $query = $this->database->getConnection()->prepare('
+        SELECT add_book(?, ?, ?, ?, ?, ?, ?, ?);
+        ');
+
+        $author_name = explode(' ', $book->getAuthor());
+        $categories = explode(',', $book->getCategories());
+        // Convert date to postgres format
+        $date = date('Y-m-d', strtotime($book->getPublishingDate()));
+
+        // Convert the array of categories to array for postgres
+        $categories = '{'.implode(',', $categories).'}';
+        $query->bindParam(1, $book->getTitle(), PDO::PARAM_STR);
+        $query->bindParam(2, $author_name[0], PDO::PARAM_STR);
+        $query->bindParam(3, $author_name[1], PDO::PARAM_STR);
+        $query->bindParam(4, $date, PDO::PARAM_STR);
+        $query->bindParam(5, $book->getPageCount(), PDO::PARAM_INT);
+        $query->bindParam(6, $book->getPhoto(), PDO::PARAM_STR);
+        $query->bindParam(7, $categories, PDO::PARAM_STR);
+        $query->bindParam(8, $book->getDescription(), PDO::PARAM_STR);
+
+
+
+        $query->execute();
+
+
+        $this->database->disconnect();
+    }
+
+
 }

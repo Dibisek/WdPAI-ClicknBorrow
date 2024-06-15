@@ -30,8 +30,10 @@ if (isset($_SESSION['user'])) {
     Routing::get('search', 'BooksController');
     Routing::get('history', 'ReservationController');
     Routing::get('logout', 'SecurityController');
+    Routing::get('addBook', 'AdminController');
     Routing::post('filterBooks', 'BooksController');
     Routing::post('reservationHandler', 'AdminController');
+    Routing::post('addBook', 'AdminController');
 
 }
 if (isAdmin()) {
