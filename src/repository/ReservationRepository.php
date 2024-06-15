@@ -73,4 +73,27 @@ class ReservationRepository extends Repository
 
         $this->database->disconnect();
     }
+
+    public function addReservation(int $book_id, string $user_id, string $reservation_start, string $reservation_end) :void
+    {
+        $this->database->connect();
+        $query = $this->database->getConnection()->prepare('
+        INSERT INTO reservations (book_id, user_id, reservation_start, reservation_end, reservation_status)
+        VALUES (?, ?, ?, ?, ?)
+        ');
+
+        $reserv_startf = date('Y-m-d', strtotime($reservation_start));
+        $reserv_endf = date('Y-m-d', strtotime($reservation_end));
+        $status = 'pending';
+
+
+        $query->bindParam(1, $book_id, PDO::PARAM_INT);
+        $query->bindParam(2, $user_id, PDO::PARAM_INT);
+        $query->bindParam(3, $reserv_startf, PDO::PARAM_STR);
+        $query->bindParam(4, $reserv_endf, PDO::PARAM_STR);
+        $query->bindValue(5, $status, PDO::PARAM_STR);
+        $query->execute();
+
+        $this->database->disconnect();
+    }
 }

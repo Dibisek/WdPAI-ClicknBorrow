@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/book-details.css">
-<!--    <link rel="stylesheet" type="text/css" href="public/css/books.css">-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1ff2c7e106.js" crossorigin="anonymous"></script>
+    <script src="public/js/reservationCheck.js" defer></script>
     <title>Homepage</title>
 </head>
 <body>
@@ -47,10 +47,19 @@
                     </div>
                 </div>
         </section>
-<!--        <section class="reservation">-->
-<!--            <div class="reservation-container">-->
-<!--            </div>-->
-<!--        </section>-->
+        <section class="reservation">
+            <div class="reservation-container">
+                <h1>Reserve this book</h1>
+                <form method="POST" action="/reserveBook">
+                    <input type="hidden" name="book_id" value="<?= $book->getId() ?>">
+                    <label for="start_date">Start date</label>
+                    <input type="date" name="start_date" id="start_date" required>
+                    <label for="end_date">End date</label>
+                    <input type="date" name="end_date" id="end_date" required>
+                    <button type="submit" class="sign-up-btn">Reserve</button>
+                </form>
+            </div>
+        </section>
     </main>
 </div>
 </body>

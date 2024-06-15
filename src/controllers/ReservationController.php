@@ -29,4 +29,19 @@ class ReservationController extends AppController
 
         return $this->render('history', ['confirmedReservations' => $confirmedReservations, 'pendingReservations' => $pendingReservations]);
     }
+
+    public function reserveBook() {
+        if (!$this->isPost()) {
+            return $this->render('error');
+        }
+
+        $reservation_start = $_POST['start_date'];
+        $reservation_end = $_POST['end_date'];
+        $book_id = intval($_POST['book_id']);
+        $user_id = unserialize($_SESSION['user'])->getId();
+
+        $this->reservationRepository->addReservation($book_id, $user_id, $reservation_start, $reservation_end);
+
+        return header('Location: /history');
+    }
 }

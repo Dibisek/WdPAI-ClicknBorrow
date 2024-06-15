@@ -34,6 +34,7 @@ if (isset($_SESSION['user'])) {
     Routing::post('filterBooks', 'BooksController');
     Routing::post('reservationHandler', 'AdminController');
     Routing::post('addBook', 'AdminController');
+    Routing::post('reserveBook', 'ReservationController');
 
 }
 if (isAdmin()) {

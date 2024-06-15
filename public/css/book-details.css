@@ -4,7 +4,7 @@ section {
     border-radius: 25px;
     background-image: linear-gradient(180deg, #6f85f9 0%, #4150a2 80%);
     box-shadow: 0px -5px 4px rgba(0, 0, 0, 0.75) inset;
-    margin: 10vh 0;
+    margin: 8vh 0;
 }
 
 .book-details-container {
@@ -80,4 +80,28 @@ section {
 
 .genre-box > p:first-child {
     color: #c9c9c9;
+}
+
+.reservation-container {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.reservation-container h1 {
+    margin: 10px 0;
+}
+
+.reservation-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form > button {
+    width: 90%;
 }
