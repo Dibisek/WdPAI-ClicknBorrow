@@ -19,7 +19,7 @@
         <section class="book-details">
             <div class="book-details-container">
                 <div class="left-section">
-                    <img src="public/img/uploads/previmg.jpeg">
+                    <img src="public/img/uploads/<?= $book->getPhoto() ?>">
                     <div class="genre-box">
                         <p>Genres</p>
                         <p><?= $book->getCategories() ?></p>

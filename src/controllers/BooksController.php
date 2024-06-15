@@ -27,7 +27,7 @@ class BooksController extends AppController
             return $this->render('homepage');
         }
 
-        $books = $this->bookRepository->getBooksAlphabetically();
+        $books = $this->bookRepository->getBooksIdSorted();
         return $this->render('homepage', ['books' => $books]);
     }
 

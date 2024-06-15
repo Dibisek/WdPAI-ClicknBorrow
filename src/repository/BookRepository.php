@@ -40,10 +40,10 @@ class BookRepository extends Repository
         return $books;
     }
 
-    public function getBooksAlphabetically() : array
+    public function getBooksIdSorted() : array
     {
         $this->database->connect();
-        $query = $this->database->getConnection()->prepare('SELECT * FROM books_view ORDER BY title');
+        $query = $this->database->getConnection()->prepare('SELECT * FROM books_view ORDER BY book_id DESC');
         $query->execute();
 
         $this->database->disconnect();
@@ -109,23 +109,27 @@ class BookRepository extends Repository
         // Convert date to postgres format
         $date = date('Y-m-d', strtotime($book->getPublishingDate()));
 
+        $bookTitle = $book->getTitle();
+        $pageCount = $book->getPageCount();
+        $bookPhoto = $book->getPhoto();
+        $bookDesc = $book->getDescription();
+
         // Convert the array of categories to array for postgres
         $categories = '{'.implode(',', $categories).'}';
-        $query->bindParam(1, $book->getTitle(), PDO::PARAM_STR);
+        $query->bindParam(1, $bookTitle, PDO::PARAM_STR);
         $query->bindParam(2, $author_name[0], PDO::PARAM_STR);
         $query->bindParam(3, $author_name[1], PDO::PARAM_STR);
         $query->bindParam(4, $date, PDO::PARAM_STR);
-        $query->bindParam(5, $book->getPageCount(), PDO::PARAM_INT);
-        $query->bindParam(6, $book->getPhoto(), PDO::PARAM_STR);
+        $query->bindParam(5, $pageCount, PDO::PARAM_INT);
+        $query->bindParam(6, $bookPhoto, PDO::PARAM_STR);
         $query->bindParam(7, $categories, PDO::PARAM_STR);
-        $query->bindParam(8, $book->getDescription(), PDO::PARAM_STR);
+        $query->bindParam(8, $bookDesc, PDO::PARAM_STR);
 
 
 
         $query->execute();
 
 
-        $this->database->disconnect();
     }
 
 

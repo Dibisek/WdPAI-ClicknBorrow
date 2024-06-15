@@ -11,7 +11,7 @@ class AdminController extends AppController
 
     const MAX_FILE_SIZE = 1024*1024;
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
-    const UPLOAD_DIRECTORY = '/../public/uploads/';
+    const UPLOAD_DIRECTORY = '/../public/img/uploads/';
     private $message = [];
     private $bookRepository;
     private $authorRepository;
@@ -49,7 +49,6 @@ class AdminController extends AppController
 
             $reservation_id = $decoded['reservation_id'];
             $status = $decoded['status'];
-            var_dump($reservation_id, $status);
             $this->reservationRepository->updateReservationStatus($status, $reservation_id);
             return;
         }
@@ -57,8 +56,8 @@ class AdminController extends AppController
 
     public function addBook()
     {
-        if ($this->isPost() && $this->validateFile($_FILES['cover']) && $this->validateForm($_POST)) {
-            $fileExt = pathinfo($_FILES['cover']['tmp_name'], PATHINFO_EXTENSION);
+        if ($this->isPost() && is_uploaded_file($_FILES['cover']['tmp_name']) && $this->validateFile($_FILES['cover']) && $this->validateForm($_POST)) {
+            $fileExt = pathinfo($_FILES['cover']['name'], PATHINFO_EXTENSION);
 
             $uniqueFileName = uniqid('', true).'.'.$fileExt;
 
@@ -80,7 +79,6 @@ class AdminController extends AppController
 
             $this->bookRepository->addBook($newBook);
 
-            echo var_dump($newBook);
 
         }
         $this->render('addBook', ['authors' => $this->authorRepository->getAuthors(),
@@ -113,8 +111,8 @@ class AdminController extends AppController
             'title',
             'author',
             'description',
-            'publishing_date',
-            'page_count',
+            'pageCount',
+            'publishingDate',
             'category'
         ];
 

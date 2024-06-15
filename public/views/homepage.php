@@ -17,49 +17,6 @@
         <main>
             <h1>Newly added</h1>
             <section class="books-container">
-                <div id="project-1">
-                    <div class="top-box">
-                        <img src="public/img/uploads/previmg.jpeg">
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo a diam sollicitudin tempor id eu nisl nunc. Faucibus vitae aliquet nec ullamcorper sit amet. Nec ullamcorper sit amet risus. Nisl pretium fusce id velit ut tortor pretium viverra.</p>
-                    </div>
-                    <h2 class="book-title koho-title">Book Title Book Title Book Title Book Title</h2>
-                    <div class="bottom-box">
-                        <p class="book-author">Author Author Author Author</p>
-                        <a href="#" class="add-bookmark">
-                            <i class="fa-regular fa-bookmark"></i>
-                        </a>
-                        <div class="rating">
-                            <i class="fa-regular fa-star"></i>
-                            <p class="koho-title">8.5</p>
-                        </div>
-                        
-                        <a href="#">
-                            <i class="fa-regular fa-share-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-                <div id="project-2">
-                    <div class="top-box">
-                        <img src="public/img/uploads/previmg.jpeg">
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo a diam sollicitudin tempor id eu nisl nunc. Faucibus vitae aliquet nec ullamcorper sit amet. Nec ullamcorper sit amet risus. Nisl pretium fusce id velit ut tortor pretium viverra.</p>
-                    </div>
-                    <h2 class="book-title koho-title">Book Title</h2>
-                    <div class="bottom-box">
-                        <p class="book-author">Author Author</p>
-                        <a href="#" class="add-bookmark">
-                            <i class="fa-regular fa-bookmark"></i>
-                        </a>
-                        <div class="rating">
-                            <i class="fa-regular fa-star"></i>
-                            <p class="koho-title">8.5</p>
-                        </div>
-                        
-                        <a href="#">
-                            <i class="fa-regular fa-share-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>book3</div>
                 <?php foreach ($books as $book): ?>
 
                 <div id="project-<?= $book->getId()?>">
