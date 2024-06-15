@@ -24,7 +24,7 @@ Routing::post('register', 'SecurityController');
 
 if (isset($_SESSION['user'])) {
     Routing::get('homepage', 'BooksController');
-    Routing::get('bookmarks', 'DefaultController');
+    Routing::get('bookmarks', 'BookmarkController');
     Routing::get('bookDetails', 'BooksController');
     Routing::get('account', 'DefaultController');
     Routing::get('search', 'BooksController');
@@ -35,6 +35,7 @@ if (isset($_SESSION['user'])) {
     Routing::post('reservationHandler', 'AdminController');
     Routing::post('addBook', 'AdminController');
     Routing::post('reserveBook', 'ReservationController');
+    Routing::get('addBookmark', 'BookmarkController');
 
 }
 if (isAdmin()) {

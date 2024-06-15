@@ -16,28 +16,7 @@
         <?php include_once __DIR__.'/shared/nav.php'; ?>
         <main>
             <h1>Newly added</h1>
-            <section class="books-container">
-                <?php foreach ($books as $book): ?>
-
-                <div id="project-<?= $book->getId()?>">
-                    <div class="top-box">
-                        <img src="public/img/uploads/<?= $book->getPhoto()?>">
-                        <p class="description"><?= $book->getDescription()?></p>
-                    </div>
-                    <h2 class="book-title koho-title"><?= $book->getTitle()?></h2>
-                    <div class="bottom-box">
-                        <p class="book-author"><?= $book->getAuthor()?></p>
-                        <a href="#" class="add-bookmark">
-                            <i class="fa-regular fa-bookmark"></i>
-                        </a>
-
-                        <a href="/bookDetails?id=<?= $book->getId()?>">
-                            <i class="fa-regular fa-share-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            </section>
+            <?php include __DIR__.'/shared/displayBooks.php'; ?>
         </main>
     </div>    
 </body>

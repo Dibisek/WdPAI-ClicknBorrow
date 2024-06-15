@@ -6,7 +6,6 @@ function validateForm(){
     endDate = new Date(inputs[2].value);
     const currentDate = new Date();
     isValid = true;
-    console.log(startDate,endDate);
 
     if (startDate.getTime() < currentDate.getTime()) {
         isValid = false;
@@ -21,7 +20,6 @@ function validateForm(){
     }
 
     button.disabled = !isValid;
-    console.log(startDate,endDate, isValid);
 }
 
 inputs.forEach(input => input.addEventListener("change", validateForm));

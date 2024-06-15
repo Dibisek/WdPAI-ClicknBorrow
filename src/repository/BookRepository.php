@@ -33,7 +33,6 @@ class BookRepository extends Repository
 
         $stmt->execute();
 
-        $this->database->disconnect();
 
         $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -46,7 +45,6 @@ class BookRepository extends Repository
         $query = $this->database->getConnection()->prepare('SELECT * FROM books_view ORDER BY book_id DESC');
         $query->execute();
 
-        $this->database->disconnect();
 
         $books = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -77,7 +75,6 @@ class BookRepository extends Repository
         $query->bindParam(':id', $id, PDO::PARAM_INT);
         $query->execute();
 
-        $this->database->disconnect();
 
         $book = $query->fetch(PDO::FETCH_ASSOC);
 

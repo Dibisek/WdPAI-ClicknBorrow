@@ -72,7 +72,6 @@ function renderPagination(books){
 
         pageBtn.addEventListener("click", () => {
             currentPage = i;
-            console.log(booksContainer.getBoundingClientRect().x);
             window.scrollTo({ top: booksContainer.getBoundingClientRect().x, behavior: "smooth" });
             renderBooks(books, currentPage);
             updateActivePageBtn();

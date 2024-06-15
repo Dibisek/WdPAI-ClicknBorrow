@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1ff2c7e106.js" crossorigin="anonymous"></script>
     <script src="public/js/reservationCheck.js" defer></script>
+    <script src="public/js/bookmarks.js" defer></script>
     <title>Homepage</title>
 </head>
 <body>
@@ -25,15 +26,19 @@
                         <p><?= $book->getCategories() ?></p>
                     </div>
                 </div>
-                <div class="mid-section">
+                <div class="mid-section" id="<?= $book->getId()?>">
                     <div class="name-box">
                     <h1 class="book-title"><?= $book->getTitle() ?></h1>
                     <h2 class="book-author"><?= $book->getAuthor() ?></h2>
                     </div>
                     <div class="func-container">
-                        <div class="add-bookmark">
-                            <p>Add to bookmarks</p>
-                            <i class="fa-regular fa-bookmark"></i>
+                        <div class="bookmark-container">
+                            <div class="bookmark-text">
+                                <span><?= $bookmarked ? 'Bookmarked' : 'Bookmark' ?></span>
+                            </div>
+                            <div class="bookmark">
+                                <i class="<?= $bookmarked ? 'fa-solid' : 'fa-regular'?> fa-bookmark"></i>
+                            </div>
                         </div>
                     </div>
                     <div class="description">

@@ -4,6 +4,7 @@ require_once 'AppController.php';
 require_once __DIR__.'/../repository/BookRepository.php';
 require_once __DIR__.'/../repository/CategoryRepository.php';
 require_once __DIR__.'/../repository/AuthorRepository.php';
+require_once __DIR__.'/../repository/BookmarkRepository.php';
 require_once __DIR__.'/../models/Book.php';
 require_once __DIR__.'/../models/Category.php';
 require_once __DIR__.'/../models/Author.php';
@@ -12,6 +13,7 @@ class BooksController extends AppController
     private $bookRepository;
     private $categoryRepository;
     private $authorRepository;
+    private $bookmarkRepository;
 
     public function __construct()
     {
@@ -19,6 +21,7 @@ class BooksController extends AppController
         $this->bookRepository = new BookRepository();
         $this->categoryRepository = new CategoryRepository();
         $this->authorRepository = new AuthorRepository();
+        $this->bookmarkRepository = new BookmarkRepository();
     }
 
     public function homepage()
@@ -28,7 +31,11 @@ class BooksController extends AppController
         }
 
         $books = $this->bookRepository->getBooksIdSorted();
-        return $this->render('homepage', ['books' => $books]);
+        $bookmarkedBookIds = [];
+        if (isset($_SESSION['user'])) {
+            $bookmarkedBookIds = $this->bookmarkRepository->getUserBookmarks(unserialize($_SESSION['user'])->getId());
+        }
+        return $this->render('homepage', ['books' => $books, 'bookmarkedBookIds' => $bookmarkedBookIds]);
     }
 
     public function bookDetails()
@@ -40,7 +47,8 @@ class BooksController extends AppController
         $id = $_GET['id'];
 
         $book = $this->bookRepository->getBookById($id);
-        return $this->render('bookDetails', ['book' => $book]);
+        $bookmarked = $this->bookmarkRepository->isBookmarked(unserialize($_SESSION['user'])->getId(), $id);
+        return $this->render('bookDetails', ['book' => $book, 'bookmarked' => $bookmarked]);
     }
 
     public function filterBooks()
