@@ -101,33 +101,33 @@ docker-compose up -d
 #### Login
 | Desktop       | Mobile     |
 |:-------------:|:------------:|
-|![login-desktop](./screenshots/sign-in.png) | -
+|![login-desktop](./screenshots/sign-in.png) | ![login-mobile](./screenshots/mobile-sign-in.png)
 
 #### Main
 | Desktop       | Mobile     |
 |:-------------:|:------------:|
-|![main-desktop](./screenshots/homepage.png) | -
+|![main-desktop](./screenshots/homepage.png) | ![main-mobile](./screenshots/mobile-homepage.png)
 
 #### Search
 | Desktop       | Mobile     |
 |:-------------:|:------------:|
-|![search-desktop](./screenshots/search-books.png) | -
+|![search-desktop](./screenshots/search-books.png) | ![search-mobile](./screenshots/mobile-search-books.png)
 
 
 #### Reservation History
 | Desktop       | Mobile     |
 |:-------------:|:------------:|
-|![history-desktop](./screenshots/reservations.png) | -
+|![history-desktop](./screenshots/reservations.png) | ![history-mobile](./screenshots/mobile-reservations.png)
 
 #### Add Book
 | Desktop       | Mobile     |
 |:-------------:|:------------:|
-|![admin-desktop](./screenshots/admin-add-book.png) | -
+|![admin-desktop](./screenshots/admin-add-book.png) | ![admin-mobile](./screenshots/mobile-admin-add-book.png)
 
 ### Bookmarks
 | Desktop       | Mobile     |
 |:-------------:|:------------:|
-|![admin-desktop](./screenshots/bookmarks.png) | -
+|![admin-desktop](./screenshots/bookmarks.png) | ![admin-mobile](./screenshots/mobile-bookmarks.png)
 
 
 ## License
