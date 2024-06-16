@@ -17,7 +17,37 @@
         <main>
             <h1>My bookmarks</h1>
             <h1></h1>
-            <?php include __DIR__.'/shared/displayBooks.php'; ?>
+            <section class="books-container">
+                <?php foreach ($books as $book): ?>
+                <?php if (in_array($book->getId(), $bookmarkedBookIds)): ?>
+                        <?php
+                        $bookmarked = in_array($book->getId(), $bookmarkedBookIds);
+                        ?>
+
+                        <div id="project-<?= $book->getId()?>">
+                            <div class="top-box">
+                                <img src="public/img/uploads/<?= $book->getPhoto()?>">
+                                <p class="description"><?= $book->getDescription()?></p>
+                            </div>
+                            <h2 class="book-title koho-title"><?= $book->getTitle()?></h2>
+                            <div class="bottom-box" id="<?= $book->getId()?>">
+                                <p class="book-author"><?= $book->getAuthor()?></p>
+                                <div class="func-container">
+                                    <div class="bookmark-container">
+                                        <div class="bookmark">
+                                            <i class="<?= $bookmarked ? 'fa-solid' : 'fa-regular'?> fa-bookmark"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a href="/bookDetails?id=<?= $book->getId()?>">
+                                    <i class="fa-regular fa-share-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                <?php endif; ?>
+                <?php endforeach; ?>
+            </section>
         </main>
     </div>
 </body>
