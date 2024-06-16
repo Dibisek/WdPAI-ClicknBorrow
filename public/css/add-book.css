@@ -59,3 +59,19 @@ form > input {
     max-width: 90%;
 }
 
+@media screen and (max-width: 768px) {
+    main {
+        padding: 0 6vw;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    #description {
+        min-height: 13em;
+    }
+
+    .book-details {
+        margin-bottom: 4em;
+    }
+}
+

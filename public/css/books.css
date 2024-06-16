@@ -121,3 +121,19 @@
     margin-left: 5px;
 }
 
+
+@media screen and (max-width: 1200px) {
+    .books-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .books-container {
+        grid-template-columns: 1fr;
+    }
+
+    .books-container > div:last-child {
+        margin-bottom: 4em;
+    }
+}

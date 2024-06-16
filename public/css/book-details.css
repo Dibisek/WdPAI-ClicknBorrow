@@ -105,3 +105,68 @@ section {
 form > button {
     width: 90%;
 }
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 0 6vw;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    main > h1 {
+        margin-bottom: 0;
+    }
+
+    section {
+        max-width: 88vw;
+        margin: 5vh auto;
+    }
+
+    section:last-child {
+        margin-bottom: 4em;
+    }
+
+    .reservation-container form {
+        padding-bottom: 2em;
+    }
+
+    .book-details-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 1vh 5vw;
+    }
+
+    .left-section {
+        padding: 0;
+    }
+
+    .left-section .genre-box {
+        font-size: 1em;
+    }
+
+    .mid-section {
+        padding: 0;
+    }
+
+
+    h1.book-title {
+        font-size: 2em;
+    }
+
+    h2.book-author {
+        font-size: 1.5em;
+    }
+
+    .mid-section {
+        max-width: 90vw;
+    }
+
+    .right-section {
+        display: block;
+    }
+
+    .reservation-container {
+        margin: 5px 0;
+    }
+}
